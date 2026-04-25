@@ -1,0 +1,171 @@
+/* =========================================
+   [근대 암호관] 갤러리 & 전시물 스타일
+   ========================================= */
+
+/* --- 가로 갤러리 공통 레이아웃 (고대관 재활용) --- */
+.gallery-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  width: 400px; /* 근대관 요소들이 좀 더 커서 넓이를 400px로 조정 */
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+}
+
+/* 작품 액자 (Frame) */
+.frame {
+  height: 280px;
+  background: #1a1816;
+  border: 8px solid #2c2822;
+  box-shadow:
+    inset 0 0 0 2px #d4af37,
+    0 15px 35px rgba(0, 0, 0, 0.6);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+/* 제목 및 펼침 안내 */
+.item-title {
+  text-align: center;
+  border-bottom: 1px solid #333;
+  padding-bottom: 15px;
+}
+.item-title h3 {
+  color: #d4af37;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+.click-hint {
+  font-size: 0.8rem;
+  color: #888;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+.gallery-item:hover .click-hint {
+  color: #d4af37;
+}
+
+/* 아코디언 설명 펼침 효과 */
+.item-desc-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.item-desc-content {
+  overflow: hidden;
+}
+.item-desc-content p {
+  color: #a19a8e;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-top: 15px;
+  text-align: justify;
+}
+.gallery-item.expand .item-desc-wrapper {
+  grid-template-rows: 1fr;
+}
+.gallery-item.expand .click-hint {
+  color: #d4af37;
+  display: inline-block;
+  transform: rotateX(180deg);
+}
+
+/* 액자 내부 전시용 미니 버튼 */
+.mini-btn {
+  margin-top: 15px;
+  padding: 8px 20px;
+  background: transparent;
+  color: #d4af37;
+  border: 1px solid #d4af37;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: 0.3s;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mini-btn:hover {
+  background: #d4af37;
+  color: #121110;
+}
+
+/* =========================================
+   개별 작품 디자인
+   ========================================= */
+
+/* 1. 에니그마 디스플레이 */
+.enigma-wrapper {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.enigma-display {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+}
+.part {
+  flex: 1;
+  height: 100px;
+  border: 1px solid #4a4031;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background: #24211d; /* 다크 빈티지 배경 */
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #a19a8e;
+  transition: 0.3s ease;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+}
+.part.active {
+  background: #d4af37; /* 신호가 들어왔을 때 금색으로 발광 */
+  color: #121110;
+  border-color: #ffe066;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+}
+
+/* 2. 튜링 봄베 터미널 로그 */
+.bombe-wrapper {
+  width: 100%;
+  padding: 20px;
+}
+#bombe-log {
+  background: #0d0c0b;
+  color: #00ff41; /* 매트릭스 느낌의 터미널 그린 */
+  padding: 15px;
+  font-family: 'Courier New', monospace;
+  height: 120px;
+  overflow: hidden;
+  border: 1px solid #3a352d;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.8);
+}

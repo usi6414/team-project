@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Cryptography | 근대 암호관</title>
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="modern.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="../main.html" style="color: #b5af9f; text-decoration: none"
+          >Museum of Cryptography</a
+        >
+      </div>
+    </header>
+
+    <section class="section">
+      <h2 class="section-title" style="margin-bottom: 20px">
+        근대 암호관 (Modern)
+      </h2>
+      <p style="text-align: center; color: #b5af9f; margin-bottom: 60px">
+        기계식 암호의 등장과 해독, 버튼을 눌러 작동 과정을 확인하고 작품을
+        클릭해 설명을 읽어보세요.
+      </p>
+
+      <div class="gallery-row">
+        <div class="gallery-item" onclick="this.classList.toggle('expand')">
+          <div class="frame">
+            <div class="enigma-wrapper">
+              <div class="enigma-display">
+                <div class="part" id="p1">키보드</div>
+                <div class="part" id="p2">로터 1,2,3</div>
+                <div class="part" id="p3">반사판</div>
+                <div class="part" id="p4">램프보드</div>
+              </div>
+              <button
+                class="mini-btn"
+                onclick="
+                  event.stopPropagation()
+                  startEnigma()
+                "
+              >
+                신호 흐름 보기
+              </button>
+            </div>
+          </div>
+          <div class="item-title">
+            <h3>에니그마 (Enigma)</h3>
+            <span class="click-hint">Click to read ▼</span>
+          </div>
+          <div class="item-desc-wrapper">
+            <div class="item-desc-content">
+              <p>
+                제2차 세계대전 당시 독일군이 사용한 회전자(Rotor) 방식의 기계식
+                암호기입니다.
+              </p>
+              <p>
+                타이프라이터처럼 생긴 키보드(p1)로 평문을 입력하면, 전기가 3개의
+                로터(p2)를 거치며 복잡하게 섞이고, 반사판(p3)에 튕겨 다시 로터를
+                역순으로 통과한 뒤 램프보드(p4)에 암호화된 알파벳 불빛을 켭니다.
+              </p>
+              <p>
+                키를 누를 때마다 로터가 회전하여, 같은 글자를 쳐도 매번 다른
+                암호가 나오는 극강의 보안성을 자랑했습니다.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" onclick="this.classList.toggle('expand')">
+          <div class="frame">
+            <div class="bombe-wrapper">
+              <div id="bombe-log">대기 중...</div>
+              <button
+                class="mini-btn"
+                onclick="
+                  event.stopPropagation()
+                  startBombe()
+                "
+              >
+                해독 시작
+              </button>
+            </div>
+          </div>
+          <div class="item-title">
+            <h3>튜링의 봄베 (Bombe)</h3>
+            <span class="click-hint">Click to read ▼</span>
+          </div>
+          <div class="item-desc-wrapper">
+            <div class="item-desc-content">
+              <p>
+                천재 수학자 앨런 튜링과 블레츨리 파크의 암호 해독가들이
+                에니그마를 깨기 위해 만든 거대한 전기기계식 장치입니다.
+              </p>
+              <p>
+                에니그마의 가능한 수많은 초기 설정값들을 무차별
+                대입(Brute-force) 방식으로 빠르게 시뮬레이션하여 모순을
+                찾아내고, 올바른 설정키를 걸러냈습니다.
+              </p>
+              <p>
+                이 기계의 발명은 연합군의 승리를 앞당겼으며, 오늘날 컴퓨터
+                과학의 시초가 되는 중요한 발명품입니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 60px">
+        <a href="../main.html" class="btn-action">← 메인으로 돌아가기</a>
+      </div>
+    </section>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

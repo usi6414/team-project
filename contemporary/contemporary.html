@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contemporary Cryptography | 현대 암호관</title>
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="contemporary.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="../main.html" style="color: #b5af9f; text-decoration: none"
+          >Museum of Cryptography</a
+        >
+      </div>
+    </header>
+
+    <section class="section">
+      <h2 class="section-title" style="margin-bottom: 20px">
+        현대 암호관 (Contemporary)
+      </h2>
+      <p style="text-align: center; color: #b5af9f; margin-bottom: 60px">
+        디지털 시대를 지키는 현대 암호의 핵심 기술들을 확인하고 클릭하여 상세
+        내용을 탐구해보세요.
+      </p>
+
+      <div class="gallery-row">
+        <div class="gallery-item" onclick="this.classList.toggle('expand')">
+          <div class="frame">
+            <div class="symmetric-visual">
+              <div class="key-single">🔑</div>
+              <div class="lock-box">AES-256</div>
+            </div>
+          </div>
+          <div class="item-title">
+            <h3>대칭키 암호 (Symmetric)</h3>
+            <span class="click-hint">Click to read ▼</span>
+          </div>
+          <div class="item-desc-wrapper">
+            <div class="item-desc-content">
+              <p>암호화와 복호화에 동일한 하나의 키를 사용하는 방식입니다.</p>
+              <p>
+                마치 하나의 열쇠로 금고를 잠그고 여는 것과 같습니다. 연산 속도가
+                매우 빨라 대용량 데이터를 암호화하는 데 효율적입니다.
+              </p>
+              <p>
+                하지만 송신자와 수신자가 동일한 키를 안전하게 공유해야 한다는
+                '키 분배 문제'가 존재합니다. 현대에는
+                <strong>AES(Advanced Encryption Standard)</strong>가 표준으로
+                사용됩니다.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" onclick="this.classList.toggle('expand')">
+          <div class="frame">
+            <div class="asymmetric-visual">
+              <div class="key-pair">
+                <span class="p-key">🔓 공개키</span>
+                <span class="s-key">🔐 개인키</span>
+              </div>
+            </div>
+          </div>
+          <div class="item-title">
+            <h3>비대칭키 암호 (Asymmetric)</h3>
+            <span class="click-hint">Click to read ▼</span>
+          </div>
+          <div class="item-desc-wrapper">
+            <div class="item-desc-content">
+              <p>
+                암호화와 복호화에 서로 다른 키(공개키, 개인키)를 사용하는
+                방식입니다.
+              </p>
+              <p>
+                누구에게나 공개된 '공개키'로 자물쇠를 잠그면, 오직 나만 가진
+                '개인키'로만 열 수 있습니다. 이로 인해 대칭키 암호의 고질적
+                문제인 키 분배 문제를 완벽히 해결했습니다.
+              </p>
+              <p>
+                복잡한 수학적 원리를 사용하여 대칭키 방식보다 연산 속도는
+                느리지만, 인터넷 뱅킹이나 전자서명 등 현대 보안의 근간이 됩니다.
+                대표적으로 <strong>RSA</strong> 알고리즘이 있습니다.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" onclick="this.classList.toggle('expand')">
+          <div class="frame">
+            <div class="hash-visual">
+              <div class="hash-input">Data</div>
+              <div class="hash-arrow">➔</div>
+              <div class="hash-output">f7a9...2b</div>
+            </div>
+          </div>
+          <div class="item-title">
+            <h3>해시 함수 (Hash Function)</h3>
+            <span class="click-hint">Click to read ▼</span>
+          </div>
+          <div class="item-desc-wrapper">
+            <div class="item-desc-content">
+              <p>
+                임의의 길이의 데이터를 고정된 길이의 고유한 값으로 변환하는
+                일방향 함수입니다.
+              </p>
+              <p>
+                입력값이 아주 조금만 달라져도 완전히 다른 해시값이 출력되기
+                때문에, 데이터가 위변조되지 않았음을 증명하는 '무결성' 확인에
+                사용됩니다.
+              </p>
+              <p>
+                한번 변환된 해시값으로는 원래의 데이터를 역추적할 수 없으며,
+                <strong>SHA-256</strong>과 같은 해시 알고리즘은 블록체인에서
+                블록들을 연결하는 핵심 기술로 쓰입니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 60px">
+        <a href="../main.html" class="btn-action">← 메인으로 돌아가기</a>
+      </div>
+    </section>
+  </body>
+</html>
